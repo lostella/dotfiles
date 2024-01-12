@@ -1,0 +1,5 @@
+*
+!nvim
+!tmux
+!.gitignore
+tmux/plugins
