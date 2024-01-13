@@ -4,6 +4,5 @@
 nvim/lazy-lock.json
 !tmux
 !.gitignore
-!tmux/plugins
 !tmux/plugins/tpm
 
