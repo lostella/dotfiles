@@ -1,6 +1,9 @@
 *
 !nvim
 !nvim/lua
+!nvim/after
+!nvim/after/plugin
+!nvim/after/plugin/*.lua
 nvim/lazy-lock.json
 !tmux
 !.gitignore
