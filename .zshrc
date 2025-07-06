@@ -2,6 +2,13 @@
 
 PS1='%F{blue}%~ %(?.%F{green}.%F{red})%#%f '
 
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory
+setopt share_history
+setopt inc_append_history
+
 alias g="git"
 
 # Source local configuration if it exists
