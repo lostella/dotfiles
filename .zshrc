@@ -1,7 +1,7 @@
 # Main .zshrc file
 
 PROMPT='%F{blue}%~ %(?.%F{green}.%F{red})%#%f '
-RPROMPT='%F{gray}[%D{%b %d, %Y, %H:%M}]%f'
+RPROMPT='%F{cyan}[%D{%b %d, %Y, %H:%M}]%f'
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
