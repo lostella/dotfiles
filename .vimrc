@@ -1,8 +1,31 @@
+" No vi compatibility
+set nocompatible
+
+" Syntax highlighting
+syntax enable
+filetype plugin on
+
+" Search down into subfolders
+set path+=**
+
+" Display matching files in menu
+set wildmenu
+
+" Tweaks for browsing
+let g:netrw_banner=0
+let g:netrw_browse_split=4
+let g:netrw_altv=0
+let g:netrw_liststyle=3
+let g:netrw_list_hide=netrw_gitignore#Hide()
+let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
+
 set number                     " Show current line number
 set relativenumber             " Show relative line numbers
 set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
 set smartindent
-syntax on
 set scrolloff=8
+set mouse=a
+
+nnoremap <leader>e :Vexplore<CR>
