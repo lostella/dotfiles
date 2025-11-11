@@ -2,7 +2,7 @@
     email = lorenzostella@gmail.com
     name = Lorenzo Stella
 [core]
-    editor = nvim
+    editor = vim
 [init]
     defaultBranch = main
 [filter "lfs"]
@@ -20,6 +20,7 @@
     d = diff
     b = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
     la = "!git config -l | grep alias | cut -c 7-"
+    recent = "!git branch --sort=-committerdate | head -10"
 [include]
     path = .gitconfig.local
 

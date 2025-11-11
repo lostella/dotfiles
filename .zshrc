@@ -12,11 +12,13 @@ setopt inc_append_history
 
 alias g="git"
 
-# Auto-attach to tmux session
+# Attach or create tmux session
 # Adapted from: https://unix.stackexchange.com/a/113768
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  tmux attach -t main || tmux new -s main
-fi
+attach() {
+  if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+    tmux attach -t main || tmux new -s main
+  fi
+}
 
 # Source local configuration if it exists
 if [ -f ~/.zshrc.local ]; then
