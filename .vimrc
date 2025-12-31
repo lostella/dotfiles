@@ -33,15 +33,11 @@ set autoread
 
 autocmd FocusGained,CursorHold * checktime
 
-nnoremap <leader>e :Vexplore<CR>
+nnoremap <leader>e :Lexplore<CR>
 nnoremap <leader>t :terminal<CR>
 nnoremap <leader>vt :vert terminal<CR>
 nnoremap <leader>o :only<CR>
 nnoremap <leader>c :close<CR>
-nnoremap <C-Left> :tabprevious<CR>
-nnoremap <C-Right> :tabnext<CR>
-nnoremap <C-j> :tabprevious<CR>
-nnoremap <C-k> :tabnext<CR>
 
 :colorscheme catppuccin_mocha
 
