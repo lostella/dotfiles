@@ -1,6 +1,8 @@
 " No vi compatibility
 set nocompatible
 
+set termguicolors
+
 " Syntax highlighting
 syntax enable
 filetype plugin on
@@ -16,8 +18,8 @@ let g:netrw_banner=0
 let g:netrw_browse_split=4
 let g:netrw_altv=0
 let g:netrw_liststyle=3
-let g:netrw_list_hide=netrw_gitignore#Hide()
-let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
+let g:netrw_list_hide='.*\.swp$,.DS_Store,.git/'
+let g:netrw_winsize=20
 
 set number                     " Show current line number
 set relativenumber             " Show relative line numbers
@@ -35,7 +37,11 @@ nnoremap <leader>e :Vexplore<CR>
 nnoremap <leader>t :terminal<CR>
 nnoremap <leader>vt :vert terminal<CR>
 nnoremap <leader>o :only<CR>
+nnoremap <leader>c :close<CR>
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
 nnoremap <C-j> :tabprevious<CR>
 nnoremap <C-k> :tabnext<CR>
+
+:colorscheme catppuccin_mocha
+
