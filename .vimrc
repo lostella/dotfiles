@@ -12,6 +12,7 @@ set path+=**
 
 " Display matching files in menu
 set wildmenu
+set wildignore+=*/.git/*
 
 " Tweaks for browsing
 let g:netrw_banner=0
@@ -38,6 +39,9 @@ nnoremap <leader>t :terminal<CR>
 nnoremap <leader>vt :vert terminal<CR>
 nnoremap <leader>o :only<CR>
 nnoremap <leader>c :close<CR>
+nnoremap <leader>f :find<Space>
+nnoremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bprevious<CR>
 
 :colorscheme catppuccin_mocha
 
