@@ -14,6 +14,8 @@ set path+=**
 set wildmenu
 set wildignore+=*/.git/*
 
+let mapleader = " "
+
 " Tweaks for browsing
 let g:netrw_banner=0
 let g:netrw_browse_split=4
@@ -31,6 +33,7 @@ set smartindent
 set scrolloff=8
 set mouse=a
 set autoread
+set hlsearch
 
 autocmd FocusGained,CursorHold * checktime
 
