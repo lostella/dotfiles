@@ -25,3 +25,4 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias dus='du -sh .??* * 2>/dev/null | sort -hr'
