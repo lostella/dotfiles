@@ -13,6 +13,8 @@
 [alias]
     s = status
     st = status
+    suno = status -uno
+    stuno = status -uno
     co = checkout
     p = pull
     a = add
