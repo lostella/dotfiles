@@ -25,4 +25,6 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias dus='du -sh .??* * 2>/dev/null | sort -hr'
+# disk usage of every entry (dotfiles included), largest first
+# (D) includes dotfiles, (N) nullglob: no error when the dir has no match
+alias dus='du -sh -- *(DN) 2>/dev/null | sort -hr'
