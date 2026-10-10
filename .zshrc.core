@@ -1,7 +1,16 @@
 # Main .zshrc file
 
 PROMPT='%F{blue}%~ %(?.%F{green}.%F{red})%#%f '
-RPROMPT='%F{cyan}[%D{%b %d, %Y, %H:%M}]%f'
+
+# RPROMPT stays empty while typing and shows the execution time once Enter is
+# pressed: zle-line-finish fills it in and redraws the prompt, precmd clears it
+# again before the next prompt
+_rprompt_time='%F{cyan}[%D{%b %d, %Y, %H:%M}]%f'
+autoload -Uz add-zsh-hook
+_rprompt_clear() { RPROMPT='' }
+add-zsh-hook precmd _rprompt_clear
+zle-line-finish() { RPROMPT=$_rprompt_time; zle reset-prompt }
+zle -N zle-line-finish
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
