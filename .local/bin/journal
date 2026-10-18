@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+JOURNAL_DIR="${JOURNAL_DIR:-$HOME/journal}"
+when="${1:-today}"
+
+# Resolve the date (GNU date first, BSD/macOS fallback)
+if d=$(date -d "$when" +%F 2>/dev/null); then
+  pretty=$(date -d "$d" '+%A, %B %-d, %Y')
+else
+  case "$when" in
+    today)     d=$(date +%F) ;;
+    yesterday) d=$(date -v-1d +%F) ;;
+    *)         d=$(date -j -f %F "$when" +%F) ;;
+  esac
+  pretty=$(date -j -f %F "$d" '+%A, %B %-d, %Y')
+fi
+
+dir="$JOURNAL_DIR/${d:0:4}/${d:0:7}"
+file="$dir/$d.md"
+
+mkdir -p "$dir"
+[[ -e $file ]] || printf '# %s\n\n' "$pretty" > "$file"
+
+exec ${EDITOR:-vi} "$file"
+
